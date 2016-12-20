@@ -1,0 +1,3 @@
+{
+    "shell:environment:not:phpcli": "Please. You need execute this script in shell"
+}
