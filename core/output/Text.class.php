@@ -9,9 +9,7 @@ use helionogueir\shell\Output;
  * @author Helio Nogueira <helio.nogueir@gmail.com>
  * @version v1.0.0
  */
-class Trace implements Output {
-
-  private $tabSpace = "  ";
+class Text implements Output {
 
   public function __construct() {
     return null;
@@ -23,12 +21,8 @@ class Trace implements Output {
    * @param int $tab Nivel tab
    * @return null
    */
-  public final function display(string $text, int $tab = 0, string $highlighter = "*") {
-    $_tab = null;
-    for ($index = 0; $index < $tab; $index++) {
-      $_tab .= $this->tabSpace;
-    }
-    echo("(" . Date("Y-m-d H:i:s") . ") | {$_tab}{$highlighter} {$text}" . PHP_EOL);
+  public final function display(string $text = null) {
+    echo($text . PHP_EOL);
     return null;
   }
 

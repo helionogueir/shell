@@ -14,12 +14,4 @@ interface Output {
    * @return null
    */
   public function __construct();
-
-  /**
-   * - Print display trace data in shell
-   * @param string $text Text show in display
-   * @param int $tab Nivel tab
-   * @return null
-   */
-  public function display(string $text, int $tab = 0, string $highlighter = "*");
 }

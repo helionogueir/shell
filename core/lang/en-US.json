@@ -1,3 +1,4 @@
 {
-    "shell:environment:not:phpcli": "Please. You need execute this script in shell"
+    "shell:environment:not:phpcli": "Please. You need execute this script in shell",
+    "shell:output:exception:error": "Exception:"
 }

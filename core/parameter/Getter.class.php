@@ -26,8 +26,23 @@ class Getter {
   }
 
   /**
+   * - Check variable exist
+   * @param Array $namespaces Variable namespace
+   * @return bool Case exist return true, or false case not exist
+   */
+  public function exist(Array $namespaces): string {
+    $exist = false;
+    foreach ($namespaces as $namespace) {
+      if (in_array($namespace, $_SERVER['argv'])) {
+        $exist = true;
+      }
+    }
+    return $exist;
+  }
+
+  /**
    * - Get variable by namespace
-   * @param string $namespaces Variable namespace
+   * @param Array $namespaces Variable namespace
    * @return string Value of namespace
    */
   public function variable(Array $namespaces): string {
@@ -35,7 +50,10 @@ class Getter {
     if (count($namespaces)) {
       for ($index = 0; $index < count($_SERVER['argv']); $index++) {
         if (!is_object($_SERVER['argv'][$index]) && in_array($_SERVER['argv'][$index], $namespaces)) {
-          $value = $_SERVER['argv'][++$index];
+          $value = "";
+          if (isset($_SERVER['argv'][++$index])) {
+            $value = $_SERVER['argv'][$index];
+          }
           break;
         }
       }
