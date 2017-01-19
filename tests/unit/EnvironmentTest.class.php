@@ -1,9 +1,9 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use helionogueir\shell\parameter\Getter;
+use helionogueir\shell\Environment;
 
-class GetterTest extends TestCase {
+class EnvironmentTest extends TestCase {
 
   public function testOnShell() {
     $this->assertTrue((new Environment())->onShell());
